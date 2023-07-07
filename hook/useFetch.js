@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import Config from 'react-native-config';
-// const rapidApiKey= Config.RAPID_API_KEY;
+import Config from 'react-native-config';
+import {API_KEY} from '@env';
+console.log(API_KEY);
 
 const useFetch=(endpoint, query)=>{
     const[data, setData]=useState([]);
@@ -12,7 +13,7 @@ const options = {
   method: 'GET',
   url: `https://jsearch.p.rapidapi.com/${endpoint}`,
   headers: {
-    'X-RapidAPI-Key': '532ed23481msh576bc983c78a57cp1241c0jsnaf52a99b7efd',
+    'X-RapidAPI-Key': API_KEY,
     'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
   },
   params: {...query},
